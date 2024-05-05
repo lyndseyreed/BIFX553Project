@@ -23,3 +23,18 @@ Evaluate how performant each of the Prosite motifs are for distinguishing kinase
 Next, we want to try to improve upon the motif concept as it is common in bioinformatics. The approach using hidden Markov models to define protein families works very well for whole protein sequences (that is the foundation of PFAM / InterPro). But motif searches have a mixed/bad reputation, because protein sequence motifs are so short, that in a different molecular context the same sequence pattern could be doing something entirely different. But now we have more data: we have residue-specific embedding vectors and we have the 3D structure of each of the involved proteins. You can choose whether to focus on adding structural constraints or employing residue-specific embedding vectors (one could average over the embedding vectors corresponding to the short linear motif).  Once you are at that step let's discuss and you will obtain more data depending on that.
 
 I provided concrete steps and data to facilitate making concrete progress with the project. It is just a suggestion, but time is getting short and one needs to decide on a path of action. As mentioned, there are other prepared project routes (so far 3 with prepared data): motif searches (described here), protein family searches based on averaged embedding vectors (described separately) and protein per-residue embeddings to predict disordered regions (described previously in an announcement). Each of these routes have concrete data to get started with. If you already progressed far with something else let's discuss, that could be fine also.
+
+
+
+
+
+
+
+
+ORDER OF EXECUTION:
+
+combine.py
+original_model.py
+compare_results.py
+improved_model.py
+compare_results_improved.py
