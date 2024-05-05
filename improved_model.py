@@ -11,7 +11,7 @@ def new_run_hmmsearch(query_sequence, hmm_profile):
     query_file = "temp_query.fasta"
     with open(query_file, "w") as f:
         SeqIO.write(query_sequence, f, "fasta")
-    cmd = ["hmmsearch", "--max", "--incE", "0.01", "--tblout", "temp_results.out", hmm_profile, query_file]
+    cmd = ["hmmsearch", "--incE", "0.05", "--tblout", "temp_results.out", hmm_profile, query_file]
     subprocess.run(cmd, check=True)
     results = list(SearchIO.parse("temp_results.out", "hmmer3-tab"))  
     os.remove(query_file)
