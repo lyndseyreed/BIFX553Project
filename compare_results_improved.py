@@ -39,7 +39,7 @@ print("Total number of sequences not found to match:", (Total_sequences - Total_
 
 accuracy = (True_Negatives +True_Positives) / Total_predicted_improved
 
-print("The accuracy of the inital model is:", accuracy)
+print("The accuracy of the improved model is:", accuracy)
 
 
 ## I am not sure what keeps happening but when i test without --max only hmmsearch fails to recognize phosphatase profiles. This may be because there are only 408 phosphatase to search and 4423 kinases to search
