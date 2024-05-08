@@ -56,11 +56,24 @@ print("Total number of matches found:", Total_predicted)
 print("Total number of sequences not found to match:", (Total_sequences - Total_predicted))
 
 accuracy = (True_Negatives +True_Positives) / Total_predicted
+sensitivty = True_Positives / (True_Positives + False_Negatives)
+specificity = True_Negatives / (True_Negatives + False_Positive)
 
 print("The accuracy of the inital model is:", accuracy)
-
-
+print("The sensitivity of the inital model is:", sensitivty)
+print("The specificity of the inital model is:", specificity)
 
 ##Based on this information it would seem that the model has a large amount of False positives and a low accuracy of 0.5.
 #the next steps would be adjusting the e-value threshold since i have the original model to --max to remove the thresholds.
 
+import matplotlib.pyplot as plt 
+
+categories = ['True Positives', 'True Negatives', 'False Positives', 'False Negatives']
+counts = [True_Positives, True_Negatives, False_Positive, False_Negatives]
+
+plt.figure(figsize=(10, 6))
+plt.bar(categories, counts, color=['green', 'blue', 'red', 'orange'])
+plt.xlabel('Categories')
+plt.ylabel('Counts')
+plt.title('Performance Metrics')
+plt.show()
